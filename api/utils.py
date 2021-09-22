@@ -1,4 +1,5 @@
 from django.core import mail
+
 from api_yamdb.settings import NOREPLY_YAMDB_EMAIL
 
 

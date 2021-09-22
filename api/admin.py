@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User, Titles, Reviews, Categories, Genres
+from .models import Categories, Genres, Reviews, Titles, User
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Titles)

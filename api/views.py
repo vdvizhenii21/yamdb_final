@@ -1,37 +1,26 @@
 from django.contrib.auth import get_user_model
-from rest_framework.pagination import PageNumberPagination
-from django.shortcuts import get_object_or_404
-from django.db.models import Avg
 from django.contrib.auth.tokens import default_token_generator
-from .filters import TitleFilter
-from rest_framework.response import Response
-from rest_framework import mixins, viewsets
-from rest_framework.filters import SearchFilter
-from rest_framework.decorators import action, api_view, permission_classes
-from .permissions import (
-    IsAdmin, IsAdminUserOrReadOnly, ReviewCommentPermissions
-)
-from rest_framework.permissions import (
-    AllowAny,
-    IsAdminUser,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly
-)
-from .models import Titles, Reviews, Categories, Genres
 from django.core.validators import validate_email
-from .serializers import (
-    CommentSerializer,
-    ReviewsSerializer,
-    GenresSerializer,
-    TitlesReadSerializer,
-    CategoriesSerializer,
-    TitlesCreateSerializer,
-    UserSerializer,
-    UserEmailSerializer
-)
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from .utils import generate_mail
+from rest_framework import mixins, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.filters import SearchFilter
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import (AllowAny, IsAdminUser, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
+from rest_framework.response import Response
 
+from .filters import TitleFilter
+from .models import Categories, Genres, Reviews, Titles
+from .permissions import (IsAdmin, IsAdminUserOrReadOnly,
+                          ReviewCommentPermissions)
+from .serializers import (CategoriesSerializer, CommentSerializer,
+                          GenresSerializer, ReviewsSerializer,
+                          TitlesCreateSerializer, TitlesReadSerializer,
+                          UserEmailSerializer, UserSerializer)
+from .utils import generate_mail
 
 User = get_user_model()
 
