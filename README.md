@@ -64,6 +64,10 @@ docker exec -ti <container_id> pytest
 
 ![example workflow](https://github.com/vdvizhenii21/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+
+## Адрес сервера:
+http://178.154.196.80/admin
+
 ## Авторы:
 - Цьома Виталий 
 - Овчинникова Тома 
